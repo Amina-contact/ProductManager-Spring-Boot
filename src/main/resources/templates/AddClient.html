@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:laout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout">
+
+<head>
+<!-- Required meta tags-->
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="../static/css/client.css"
+	th:href="@{/css/client.css}">
+<!-- Title Page-->
+<title>Ajouter Client</title>
+<link
+	href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+	rel="stylesheet">
+</head>
+
+<body>
+	<div layout:fragment="content1">
+		<div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+			<div class="wrapper wrapper--w680">
+				<div class="card card-4">
+					<div class="card-body">
+						<h2 class="title">Ajouter Client</h2>
+						<hr>
+						<br>
+						<form th:action="@{/admin/saveclient}" methode="post"
+							enctype="multipart/form-data">
+							<div class="row row-space">
+								<div class="col-2">
+									<div class="input-group">
+										<label class="label">Nom</label> <input
+											class="input--style-4" type="text" name="nom">
+									</div>
+								</div>
+								<div class="col-2">
+									<div class="input-group">
+										<label class="label">Prénom</label> <input
+											class="input--style-4" type="text" name="prenom">
+									</div>
+								</div>
+							</div>
+							<div class="row row-space">
+								<div class="col-2">
+									<div class="input-group">
+										<label class="label">Email</label> <input
+											class="input--style-4" type="email" name="mail">
+									</div>
+								</div>
+								<div class="col-2">
+									<div class="input-group">
+										<label class="label">Téléphone</label> <input
+											class="input--style-4" type="text" name="tele">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label>Address</label> <input type="text" name="adresse"
+									class="input--style-4" placeholder="6 Rue Mohamed Jazouli Rabat">
+							</div>
+							<div class="form-group">
+								<label>Photo URL</label> <input type="text" name="photo"
+									class="input--style-4" placeholder="img\photo.png"> <br>
+								<br>
+								<div class="panel-footer"
+									style="display: flex; justify-content: flex-end;">
+									<a class="btn btn-danger" th:href="@{/clients}"
+										style="margin-right: 10px" role="button">Annuler</a>
+									<button type="submit" class="btn btn-primary">Ajouter</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

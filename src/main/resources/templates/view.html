@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:laout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout">
+<head>
+<meta charset="utf-8">
+<title>Clients Details</title>
+<link rel="stylesheet" href="../static/css/viewclient.css"
+	th:href="@{/css/viewclient.css}">
+<script src="https://kit.fontawesome.com/1b65a2a15a.js"
+	crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<div layout:fragment="content1">
+		<div class="container" style="padding-top: 80px; width: 90%;">
+			<div class="col-md-6 col-md-offset-3" style="margin-top: 40px;">
+
+				<table class="table table-bordered table-hover">
+					<thead>
+						<tr>
+							<th>Photo</th>
+							<th>Nom</th>
+							<th>Prenom</th>
+							<th>Email</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><img style="border-radius: 100%"
+								th:src="${client.getPhoto()}" height="45" width="45"></td>
+							<td th:text="${client.nom}"></td>
+							<td th:text="${client.prenom}"></td>
+							<td th:text="${client.mail}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

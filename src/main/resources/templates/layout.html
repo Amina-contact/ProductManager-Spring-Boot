@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:laout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<title>Page Layout</title>
+<link rel="icon" href="/img/iconf.png">
+<link rel="stylesheet" href="../static/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" href="../static/css/sidebar.css"
+	th:href="@{/css/sidebar.css}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <!-- insérer des icônes Font Awesome 5 sur votre application web -->
+  <script src="https://kit.fontawesome.com/1b65a2a15a.js" crossorigin="anonymous"></script>
+  
+</head>
+<body>
+     <input type="checkbox" id="check">
+	 <header>
+      <label for="check">
+        <i class="fas fa-bars" id="sidebar_btn"></i>
+      </label>
+      <div class="left_area">
+        <h3>Product <span>Manager</span></h3>
+      </div>
+      <div class="right_area">
+        <a th:href="@{/login?logout}" class="logout_btn"><span
+          class="glyphicon glyphicon-log-out"></span> Logout
+        </a>
+      </div>
+    </header>
+    
+    <footer class="text-center text-white" style="background-color: #f1f1f1;position:absolute;bottom:0;padding-left:156px;">
+  <!-- Grid container -->
+  <div class="container pt-4" >
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="#!"
+        role="button"
+        ><i class="fa fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="#!"
+        role="button"
+        ><i class="fa fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="#!"
+        role="button"
+        ><i class="fa fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="#!"
+        role="button"
+        ><i class="fa fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="https://www.linkedin.com/in/amina-dahmouni-b237971a1/"
+        role="button"
+        ><i class="fa fa-linkedin"></i
+      ></a>
+      <!-- Github -->
+      <a
+        class="btn btn-link btn-floating btn-lg text-dark m-1"
+        href="https://github.com/DahmouniAmina/"
+        role="button"
+        ><i class="fa fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);height:35px;">
+    © 2021 Copyright:
+    <a class="text-dark" href="http://itimdex.com/">Itimdex.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+    <div class="sidebar">
+      <a th:href="@{/user/index}"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+      <a th:href="@{/user/index}"><i class="fas fa-table"></i><span>Liste des produits</span></a>
+      <a th:href="@{/categories}"><i class="fas fa-table"></i><span>Les Catégories</span></a>
+      <a th:href="@{/clients}"><i class="fas fa-table"></i><span>Les Clients</span></a>
+      <a th:href="@{/about}"><i class="fas fa-info-circle"></i><span>About</span></a>
+    </div>
+    <div class="content">
+    <section layout:fragment="content1"></section>
+    </div>
+    
+</body>
+</html>

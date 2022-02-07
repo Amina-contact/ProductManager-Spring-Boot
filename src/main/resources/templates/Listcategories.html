@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:laout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout">
+<head>
+<meta charset="UTF-8">
+<title>Categories</title>
+<link rel="stylesheet" href="../static/css/style.css"
+	th:href="@{/css/style.css}">
+</head>
+<body>
+	<div layout:fragment="content1">
+		<div class="container" style="padding-top: 90px; width: 90%;">
+			<div class="panel panel-primary">
+				<div class="panel-heading">Liste des categories</div>
+
+				<div class="panel-body" style="margin: 0 15px">
+					<div class="row">
+						<div class="col-md-9">
+							<h4>Liste des categories présents</h4>
+						</div>
+						<div class="col-md-3">
+							<a th:href="@{/admin/formProduit}">
+								<button type="button" class="btn btn-primary pull-right">
+									<i class="fa fa-plus"></i> Ajouter Categorie
+								</button>
+							</a>
+						</div>
+					</div>
+					<table class="table">
+						<tr>
+							<th>ID</th>
+							<th>Catégorie</th>
+							<th colspan="2" style="text-align: left;">Actions</th>
+						</tr>
+						<tr th:each="c:${listcategories}">
+							<td th:text="${c.idCat}"></td>
+							<td th:text="${p.nomCat}"></td>
+						</tr>
+					</table>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

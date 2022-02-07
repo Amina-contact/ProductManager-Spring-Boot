@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:laout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout">
+<head>
+<meta charset="UTF-8">
+<title>About</title>
+<link rel="stylesheet" href="../static/css/about.css"
+	th:href="@{/css/about.css}">
+</head>
+<body>
+	<div layout:fragment="content1">
+		<div class="container" style="padding-top: 70px; width: 100%;">
+			<div class="header">
+				<div class="banner">
+					<div class="row">
+						<div class="col-8">
+							<div class="app-text">
+								<h3> Gérer l’état de votre articles et clients</h3>
+								<h1>
+									Product<br>Manager
+								</h1>
+								<p>Un logiciel de gestion des stocks sur ordinateur dont vous pouvez choisir les fonctionnalités que vous souhaitez utiliser .</p>
+								<div class="btn-group">
+									<div class="play-btn">
+										<div class="play-btn-inner">
+											<i class="fa fa-play"></i>
+										</div>
+										<span>How it works</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-4">
+							<div class="app-picture">
+								<img src="/img/logof.png" width="430px" height="500px">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:laout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout">
+<head>
+<meta charset="utf-8">
+<title>Clients</title>
+<script src="https://kit.fontawesome.com/1b65a2a15a.js"
+	crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+	<div layout:fragment="content1">
+		<div class="container" style="padding-top: 90px; width: 90%;">
+			<div class="panel panel-primary">
+				<div class="panel-heading">Liste des clients</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-lg-3">
+							<form th:action="@{/clients}" method="get">
+								<div class="input-group">
+									<input type="text" class="form-control" name="motCle"
+										th:value="${motCle}" placeholder="Search for..."> <span
+										class="input-group-btn">
+										<button class="btn btn-default" type="submit">Go!</button>
+									</span>
+								</div>
+							</form>
+						</div>
+						<div class="col-lg-3">
+							<a th:href="@{/admin/addClient}"
+								class="btn btn-success ml-3 mt-3"><i class="fas fa-plus"></i>
+								Nouveau Client</a>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="panel-body">
+					<table class="table table-bordered table-hover">
+						<thead>
+							<tr>
+								<th>Photo</th>
+								<th>Nom</th>
+								<th>Prénom</th>
+								<th>Email</th>
+								<th>Téléphone</th>
+								<th style="text-align: center;">Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="client:${listClients}">
+								<td><img style="border-radius: 100%"
+									th:src="${client.getPhoto()}" height="60" width="70"></td>
+								<td th:text="${client.nom}"></td>
+								<td th:text="${client.prenom}"></td>
+								<td><a href='mailto:th:text=" ${client.mail}"'><i
+										th:text="${client.mail}" class="fas fa-paper-plane"
+										style="color: #700414; font-size: 15px;"></i> </a></td>
+								<td><a href='tel:th:text="${client.tele}"'><i
+										class="fas fa-phone-square-alt" th:text="${client.tele}"
+										style="color: #A75600; font-size: 15px;"></i> </a></td>
+								<td style="text-align: center;">
+									<!-- <a th:href="@{/admin/viewclient(idClient=${client.idClient})}"><i class="fas fa-eye" title="View"
+										style="color: #E89B19; font-size: 19px;"></i>
+								</a> --> <a
+									th:href="@{/admin/editclient(idClient=${client.idClient})}"><i
+										class="fas fa-edit" title="Modifier"
+										style="color: #337ab7; font-size: 19px; padding: 3px;"></i></a> <a
+									onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce client ? ')"
+									th:href="@{/admin/deleteClient(idClient=${client.idClient},page=${currentPage},motCle=${motCle})}"><i
+										class="glyphicon glyphicon-trash" title="Supprimer"
+										style="color: red; font-size: 19px; padding-left: 15px;"></i></a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div style="display: flex; justify-content: flex-end;">
+						<ul class="nav nav-pills">
+							<li th:class="${currentPage==status.index}?'active':''"
+								th:each="page,status:${pages}"><a
+								th:href="@{/clients(page=${status.index},motCle=${motCle})}"
+								th:text="${status.index}"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

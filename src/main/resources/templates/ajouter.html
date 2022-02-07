@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:laout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout">
+
+<head>
+<!-- Required meta tags-->
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="../static/css/client.css"
+	th:href="@{/css/client.css}">
+<!-- Title Page-->
+<title>Ajouter Client</title>
+<link
+	href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+	rel="stylesheet">
+</head>
+
+<body>
+	<div layout:fragment="content1">
+		<div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+			<div class="wrapper wrapper--w680">
+				<div class="card card-4">
+					<div class="card-body">
+						<h2 class="title">Ajouter Client</h2>
+						<hr>
+						<br>
+						<form method="POST">
+							<div class="row row-space">
+								<div class="col-2">
+									<div class="input-group">
+										<label class="label">first name</label> <input
+											class="input--style-4" type="text" name="first_name">
+									</div>
+								</div>
+								<div class="col-2">
+									<div class="input-group">
+										<label class="label">last name</label> <input
+											class="input--style-4" type="text" name="last_name">
+									</div>
+								</div>
+							</div>
+							<div class="row row-space">
+								<div class="col-2">
+									<div class="input-group">
+										<label class="label">Email</label> <input
+											class="input--style-4" type="email" name="email">
+									</div>
+								</div>
+								<div class="col-2">
+									<div class="input-group">
+										<label class="label">Password</label> <input
+											class="input--style-4" type="password" name="phone">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label>Address</label> <input type="text" class="input--style-4"
+									placeholder="1234 Main St">
+							</div>
+
+							<div class="form-group">
+								<label>Photo URL</label>
+								<div>
+									<input type="text" class="input--style-4"
+										placeholder="C:\Users\asus\Desktop\amina\amina.png" required>
+								</div>
+								<br> <br>
+								<div class="panel-footer"
+									style="display: flex; justify-content: flex-end;">
+									<a class="btn btn-danger" th:href="@{/clients}"
+										style="margin-right: 10px" role="button">Annuler</a>
+									<button type="submit" class="btn btn-primary">Ajouter</button>
+								</div>
+							</div>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
+<!-- end document-->

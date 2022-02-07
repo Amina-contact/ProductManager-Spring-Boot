@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:laout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout">
+<head>
+<meta charset="UTF-8">
+<title>Saisie d'un produit</title>
+</head>
+<body>
+
+	<div layout:fragment="content1">
+		<div class="col-md-6 col-md-offset-3"
+			style="padding-top: 130px; width: 50%">
+			<div class="panel panel-primary">
+				<div class="panel-heading">Nouveau Produit</div>
+				<div class="panel-body">
+					<form th:action="@{/admin/save}" method="post">
+
+						<div class="form-groop">
+							<label class="control-label">Désignation</label> <input
+								class="form-control" type="text" name="designation"
+								th:value="${produit.designation}"> <span
+								th:errors="${produit.designation}" class="text-danger"></span>
+							<!--th:errors="${produit.designation} pour afficher message d'erreur  -->
+							<!-- th:value="${produit.designation}"   th:value="${produit.quantite} pour afficher les valeurs par defauts dans ajouter produit-->
+						</div>
+
+
+						<div class="form-groop">
+							<label class="control-label">Catégorie</label>
+							<select class="form-control" name="categorie" title="">
+								<option>Select Category</option>
+								<option th:each="categorie:${categories}" th:value="${categorie.idCat}">[[${categorie.nomCat}]]</option>
+							</select>
+
+						</div>
+
+
+						<div class="form-groop">
+							<label class="control-label">Prix</label> <input
+								class="form-control" type="text" name="prix"
+								th:value="${produit.prix}"> <span
+								th:errors="${produit.prix}" class="text-danger"></span>
+						</div>
+						<div class="form-groop">
+							<label class="control-label">Quantité</label> <input
+								class="form-control" type="text" name="quantite"
+								th:value="${produit.quantite}"> <span
+								th:errors="${produit.quantite}" class="text-danger"></span>
+						</div>
+						<br> <a class="btn btn-default" th:href="@{/user/index}"
+							role="button">Annuler</a>
+						<button type="submit" class="btn btn-primary">Ajouter</button>
+					</form>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</body>
+</html>

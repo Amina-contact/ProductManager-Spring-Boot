@@ -1,0 +1,44 @@
+@charset "UTF-8";
+body{
+	margin: 0;
+	padding:0;
+	/*background: url(/img/interface.png);*/
+	background-color: rgba (0, 43, 106, 0,3);
+	background-size: cover;
+	background-position: center;
+	
+}
+h1{
+	color:#fff;
+	margin:0;
+	padding:0 0 20px;
+	text-align: center;
+}
+.login-box{
+	width:400px;
+	height:410px;
+	background: rgba(0,0,0,0.5);
+	top:50%;
+	left:50%;
+	position:absolute;
+	transform:translate(-50%,-50%);
+	box-sizing: border-box;
+	padding: 70px 30px;
+}
+.profile{
+	width:100px;
+	height:100px;
+	border-radius:50%;
+	position: absolute;
+	top: -50px;
+	left:calc(50% - 50px);
+	
+}
+#botton1{
+	border: none;
+	outline:none;
+	width:340px;
+	height: 40px;
+	font-size: 18px;
+	border-radius: 20px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:laout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout">
+<head>
+<meta charset="UTF-8">
+<title>Produits</title>
+</head>
+<body style="background-color:black;">
+	<div layout:fragment="content1">
+		<div class="py-5">
+			<div class="container" style="padding-top: 90px; width: 90%;">
+				<div class="row">
+					<div class="col-md-3"></div>
+					<div class="col-md-6">
+						<div class="card text-white p-4 pt-5 bg-dark">
+							<div class="card-body text-center">
+								<img src="/img/att.png">
+								<h1 style="color:white;">404</h1>
+								<h3 style="color:white;">Page introuvable !</h3>
+								<a class="h4 text-light mx-2 btn-sm btn-primary"
+									onclick='history.back();' href="javascript:void(0)">Retour</a>
+								<a class="h4 text-light mx-2 btn-sm btn-primary" th:href="@{/}">Accueil</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<h3>Vous n'êtes pas autorisé</h3>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:laout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layout">
+<head>
+<meta charset="UTF-8">
+<title>Produits</title>
+<link rel="stylesheet" href="../static/css/style.css"
+	th:href="@{/css/style.css}">
+</head>
+<body>
+	<div layout:fragment="content1">
+		<div class="container" style="padding-top: 85px; width: 90%;">
+			<div class="panel panel-primary">
+				<div class="panel-heading">Liste des produits</div>
+				<div class="row">
+					<div class="col-md-10">
+						<div class="panel-body">
+							<form th:action=@{/user/index} method="get">
+								<label>Mot-clé:</label> <input type="text" name="motCle"
+									placeholder="Entrer un mot clé" th:value="${motCle}"
+									style="height: 35px; width: 230px; font-size: 15px;">
+								<button type="submit" class="btn btn-primary"
+									style="height: 35px; width: 230px; font-size: 15px;">Chercher
+									des produits</button>
+							</form>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<img alt="" src="/img/interface.png" width=90px height=65px>
+					</div>
+
+				</div>
+				
+					<div class="panel-body" style="margin: 0 15px">
+						<div class="row">
+						   <div class="col-md-9">
+							<h4>Liste des produits présents</h4>
+							</div>
+							<div class="col-md-3">
+							<a th:href="@{/admin/formProduit}">
+								<button type="button" class="btn btn-primary pull-right">
+									<i class="fa fa-plus"></i> Ajouter Produit
+								</button>
+							</a>
+							</div>
+						</div>
+						<br>
+						<table class="table table-striped">
+							<tr>
+								<th>ID</th>
+								<th>Catégorie</th>
+								<th>Désignation</th>
+								<th>Prix</th>
+								<th>Quantite</th>
+								<th colspan="2" style="text-align: left;">Actions</th>
+								
+							</tr>
+							<tr th:each="p:${listProduits}">
+								<td th:text="${p.id}"></td>
+								<td  th:text="${p.categorie.nomCat}"></td>
+								<td th:text="${p.designation}"></td>
+								<td th:text="${p.prix}"></td>
+								<td th:text="${p.quantite}"></td>
+								<td><a th:href="@{/admin/edit(id=${p.id})}"><span
+										class="glyphicon glyphicon-pencil" title="Modifier"></span></a></td>
+								<td><a
+									onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce produit ? ')"
+									th:href="@{/admin/delete(id=${p.id},page=${currentPage},motCle=${motCle})}"><span
+										class="glyphicon glyphicon-trash" title="Supprimer"></span></a></td>
+							   
+                                           <!--	<td th:each="c : ${listCategories}"
+                                            th:if="(${c.id} == ${p.code_categorie})"
+                                            th:text="${c.nomCat}"></td>
+                                            
+                                              <td th:each="c : ${listCategories}"
+                                            th:if="(${c.id} == ${p.idref})"
+                                            th:text="${c.nomCat}"></td>
+                                            
+                                              -->
+							</tr>
+						</table>
+						<ul class="nav nav-pills">
+							<li th:class="${currentPage==status.index}?'active':''"
+								th:each="page,status:${pages}"><a
+								th:href="@{/user/index(page=${status.index}, motCle=${motCle})}"
+								th:text="${status.index}"></a></li>
+						</ul>
+					</div>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

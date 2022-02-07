@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.header{
+    height: 50vh;
+    background-color: #fff;
+    position: relative;
+}
+
+.header .navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    margin-top: 30px;
+}
+
+.banner{
+    position: absolute;
+    left: 70px;
+    color: #fff;
+}
+
+.app-text{
+    width: 50%;
+    float: left;
+    padding-left: 50px;
+}
+
+.app-text h3{
+    margin-top: 50px;
+    font-size: 17px;
+    color: #000;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.app-text h1{
+    font-size: 51px;
+    position: relative;
+    color: #000;
+    margin-top: 40px;
+    font-weight: 700;
+    line-height: 1;
+    font-family: Georgia, Verdana, sans-serif;
+}
+
+.app-text p{
+	margin-top: 40px;
+    font-size: 19px;
+    letter-spacing: 1px;
+    color: #000;
+}
+
+.btn-group{
+	margin-top: 40px;
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+.btn-group .play-btn{
+    margin-left: -1px;
+    display: inline-flex;
+}
+
+.btn-group span{
+    color: #000;
+    font-size: 20px;
+    font-weight: 900;
+    margin: auto 20px;
+    cursor: pointer;
+}
+
+.play-btn-inner{
+    height: 50px;
+    width: 50px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    background-color: #000;
+}
+
+.play-btn-inner i{
+    padding: 15px 19px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.about-services{
+    position: absolute;
+    top: 125%;
+    width: 100%;
+    text-align: center;
+    padding: 0 300px;
+}
+
+.about-services ul{
+    display: inline-flex;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.about-services ul li{
+    margin: 0 50px;
+    cursor: pointer;
+}
+
+.about-services ul li img{
+    width: 120px;
+    height: auto;
+}
+
+.about-services ul li h1{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.about-services ul li p{
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+
+

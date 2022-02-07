@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="utf-8">
+    <title>Sidebar </title>
+    <link rel="stylesheet" href="../static/css/sidebar.css"
+	th:href="@{/css/sidebar.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  </head>
+  <body>
+
+    <input type="checkbox" id="check">
+    <!--header area start-->
+    <header>
+      <label for="check">
+        <i class="fas fa-bars" id="sidebar_btn"></i>
+      </label>
+      <div class="left_area">
+        <h3>Product <span>Manager</span></h3>
+      </div>
+      <div class="right_area">
+        <a th:href="@{/login?logout}" class="logout_btn"><span
+          class="glyphicon glyphicon-log-out"></span>Logout
+        </a>
+      </div>
+    </header>
+    <!--header area end-->
+    <!--sidebar start-->
+    <div class="sidebar">
+      <i class="fa fa-circle-o"></i>
+      <a th:href="@{/user/index}"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+      <a th:href="@{/user/index}"><i class="fas fa-table"></i><span>Liste des produits</span></a>
+      <a href="#"><i class="fas fa-table"></i><span>Les Catégories</span></a>
+      <a href="#"><i class="fas fa-table"></i><span>Les Utilisateurs</span></a>
+      <a href="#"><i class="fas fa-info-circle"></i><span>About</span></a>
+      <a th:href="@{/login?logout}" ><span class="glyphicon glyphicon-log-out"></span>Logout</a>
+    </div>
+    <!--sidebar end-->
+
+    <div class="content"></div>
+    <footer class="text-center text-white" style="background-color: #f1f1f1;position:absolute;bottom:0;width:100%; text-align: center;">
+      <!-- Grid container -->
+      <div class="container pt-4">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <!-- Facebook -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-dark m-1"
+            href="#!"
+            role="button"
+            ><i class="fa fa-facebook-f"></i
+          ></a>
+    
+          <!-- Twitter -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-dark m-1"
+            href="#!"
+            role="button"
+            ><i class="fa fa-twitter"></i
+          ></a>
+    
+          <!-- Google -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-dark m-1"
+            href="#!"
+            role="button"
+            ><i class="fa fa-google"></i
+          ></a>
+    
+          <!-- Instagram -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-dark m-1"
+            href="#!"
+            role="button"
+            ><i class="fa fa-instagram"></i
+          ></a>
+    
+          <!-- Linkedin -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-dark m-1"
+            href="https://www.linkedin.com/in/amina-dahmouni-b237971a1/"
+            role="button"
+            ><i class="fa fa-linkedin"></i
+          ></a>
+          <!-- Github -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-dark m-1"
+            href="https://github.com/DahmouniAmina/"
+            role="button"
+            ><i class="fa fa-github"></i
+          ></a>
+        </section>
+        <!-- Section: Social media -->
+      </div>
+      <!-- Grid container -->
+    
+      <!-- Copyright -->
+      <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);height:35px;">
+        © 2021 Copyright:
+        <a class="text-dark" href="http://itimdex.com/">Itimdex.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+      <section layout:fragment="content1"></section>
+    
+      <footer>
+        <div></div>
+      </footer>
+  </body>
+</html>
