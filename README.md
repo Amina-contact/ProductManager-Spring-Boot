@@ -1,6 +1,8 @@
 # ProductManager-Spring-Boot
 # Fonctionnalités:
-C'est une application web qui permet de réaliser des opérations CRUD(Create,Update,Delete) sur un ensemble des éléments.<br>
+L’objectif  est de représenter le processus de gestion produits disponibles dans le stock et la gestion des clients du magasin, qui se fait par 
+papier, par une application web qui répond aux besoins du magasin.<br>
+ProductManager est une application web qui permet de réaliser des opérations CRUD(Create,Update,Delete) sur un ensemble des éléments.<br>
 Cette application gére quatre entités : Produit,Categorie et Client avec accès à une base de données MySql.<br>
 L'application  permet à l’utilisateur d’effectuer les opérations suivantes :<br>
    o Accès personnel<br>
