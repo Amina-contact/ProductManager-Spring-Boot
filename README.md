@@ -10,7 +10,7 @@ L'application  permet à l’utilisateur d’effectuer les opérations suivantes
    o Gestion des catégories<br>
    o Gestion des clients<br>
  # Démo
- 
+ La vidéo de démonstration : https://youtu.be/OG10sdSd_JU
  # Authentification :
  L’interface Authentification permet à l’utilisateur d’accéder à l’application via  un login et un mot de passe, si le login ou bien le mot de passe est invalide le 
  système affiche un message d’erreur et demande de refaire l’authentification.
